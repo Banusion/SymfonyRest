@@ -18,7 +18,6 @@ framework:
     form: ~
     csrf_protection: ~
     validation: { enable_annotations: true }
-    #serializer: { enable_annotations: true }
     templating:
         engines: ['twig']
     default_locale: '%locale%'
@@ -33,6 +32,9 @@ framework:
     assets: ~
     php_errors:
         log: true
+    serializer:
+        enabled: true
+
 
 # Twig Configuration
 twig:
