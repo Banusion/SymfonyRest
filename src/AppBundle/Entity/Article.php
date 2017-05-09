@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation as Serializer;
 
 /**
  * @ORM\Entity
@@ -15,21 +14,16 @@ class Article
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @Serializer\Groups({"list"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Serializer\Expose
-     * @Serializer\Groups({"detail", "list"})
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
-     * @Serializer\Expose
-     * @Serializer\Groups({"detail"})
      */
     private $content;
 

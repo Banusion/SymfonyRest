@@ -3,55 +3,47 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Article;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use JMS\Serializer\SerializationContext;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 
 class ArticleController extends Controller
 {
     /**
-     * @Route("/articles/{id}", name="article_show")
-     * @Method({"GET"})
+     * @Rest\Get(
+     *     path = "/articles/{id}",
+     *     name = "app_article_show",
+     *     requirements = {"id"="\d+"}
+     * )
+     * @Rest\View()
      */
     public function showArticleAction(Article $article)
     {
-      
-        $data = $this->get('jms_serializer')->serialize($article, 'json',SerializationContext::create()->setGroups(array('detail')));
-        $response = new Response($data);
-        $response->headers->set('Content-Type', 'application/json');
-
-        return $response;
+        return $article;
     }
 	
 	/**
-     * @Route("/articles", name="articles_show")
-     * @Method({"GET"})
+     * @Rest\Get("/articles")
+     * @Rest\View()
      */
     public function listAction()
     {
       	$articles = $this->getDoctrine()->getRepository('AppBundle:Article')->findAll();
-        $data = $this->get('jms_serializer')->serialize($articles, 'json',SerializationContext::create()->setGroups(array('list')));
-        $response = new Response($data);
-        $response->headers->set('Content-Type', 'application/json');
 
-        return $response;
+        return $articles;
     }
     
     /** 
-     * @Route("/articles", name="article_create")
-     * @Method({"POST"})
+     * @Rest\Post("/articles")
+     * @Rest\View()
+     * @ParamConverter("article", converter="fos_rest.request_body")
      */
-    public function createAction(Request $request)
+    public function createAction(Article $article)
     {
-    	$data = $request->getContent();
-    	$article = $this->get('jms_serializer')->deserialize($data,'AppBundle\Entity\Article','json');
     	$em = $this->getDoctrine()->getManager();
-    	$em->persist($article);
-    	$em->flush();
+        $em->persist($article);
+        $em->flush();
 
-    	return new Response('', Response::HTTP_CREATED);	
+        return $article;
     }
 }
