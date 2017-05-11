@@ -75,6 +75,8 @@ swiftmailer:
     spool: { type: memory }
 
 fos_rest:
+    param_fetcher_listener:
+        enabled: true
     body_converter:
         enabled: true
     format_listener:

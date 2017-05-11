@@ -3,10 +3,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
+use JMS\Serializer\Annotation\ExclusionPolicy;
+use JMS\Serializer\Annotation\Expose;
 
 /**
  * @ORM\Entity
  * @ORM\Table()
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ArticleRepository")
+ * @ExclusionPolicy("all")
  */
 class Article
 {
@@ -14,18 +19,27 @@ class Article
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Expose
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=100)
+     * @Expose
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
+     * @Expose
      */
     private $content;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Author", cascade={"all"}, fetch="EAGER")
+     */
+    private $author;
+
 
     public function getId()
     {
@@ -56,13 +70,6 @@ class Article
         return $this;
     }
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Author", cascade={"all"}, fetch="EAGER")
-     */
-    private $author;
-
-    // …
-
     public function getAuthor()
     {
         return $this->author;
@@ -72,4 +79,5 @@ class Article
     {
         $this->author = $author;
     }
+    
 }
