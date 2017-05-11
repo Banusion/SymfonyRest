@@ -8,8 +8,12 @@ use FOS\RestBundle\Controller\Annotations as Rest;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use FOS\RestBundle\Request\ParamFetcherInterface;
+use Symfony\Component\HttpFoundation\Response;
+use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Component\Validator\ConstraintViolationList;
+use AppBundle\Exception\ResourceValidationException;
 
-class ArticleController extends Controller
+class ArticleController extends FOSRestController
 {
      /**
      * @Rest\Get(
@@ -69,11 +73,20 @@ class ArticleController extends Controller
 	
     /** 
      * @Rest\Post("/articles")
-     * @Rest\View()
+     * @Rest\View(StatusCode = 201)
      * @ParamConverter("article", converter="fos_rest.request_body")
      */
-    public function createAction(Article $article)
+    public function createAction(Article $article, ConstraintViolationList $violations)
     {
+
+        if (count($violations)) {
+            $message = 'The JSON sent contains invalid data. Here are the errors you need to correct: ';
+            foreach ($violations as $violation) {
+                $message .= sprintf("Field %s: %s ", $violation->getPropertyPath(), $violation->getMessage());
+            }
+
+            throw new ResourceValidationException($message);
+        }
     	$em = $this->getDoctrine()->getManager();
         $em->persist($article);
         $em->flush();
