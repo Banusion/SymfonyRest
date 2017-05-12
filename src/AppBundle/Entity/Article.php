@@ -42,7 +42,10 @@ use Hateoas\Configuration\Annotation as Hateoas;
  *     "author",
  *     embedded = @Hateoas\Embedded("expr(object.getAuthor())")
  * )
- 
+ * @Hateoas\Relation(
+ *     "weather",
+ *     embedded = @Hateoas\Embedded("expr(service('app.weather').getCurrent())")
+ * )
  */
 class Article
 {
@@ -50,21 +53,24 @@ class Article
      * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
-     * @Expose
+     * @Serializer\Expose
+     * @Serializer\Since("1.0")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=100)
-     * @Expose
+     * @Serializer\Expose
      * @Assert\NotBlank
+     * @Serializer\Since("1.0")
      */
     private $title;
 
     /**
      * @ORM\Column(type="text")
-     * @Expose
+     * @Serializer\Expose
      * @Assert\NotBlank
+     * @Serializer\Since("2.0")
      */
     private $content;
 
@@ -112,5 +118,12 @@ class Article
     {
         $this->author = $author;
     }
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     * @Serializer\Expose
+     * @Serializer\Since("2.0")
+     */
+    private $shortDescription;
     
 }
