@@ -16,8 +16,6 @@ class ArticleRepository extends AbstractRepository
                 ->setParameter(1, '%'.$term.'%')
             ;
         }
-        /*$result = $qb->getQuery()->getResult();
-        dump($result);*/
         return $this->paginate($qb, $limit, $offset);
     }
 }
