@@ -1,6 +1,6 @@
 <?php
 
-/* default/admin.html.twig */
+/* :default:admin.html.twig */
 class __TwigTemplate_d7398bdfea6ee3542ebe89c8f6ba4b08bd30366c448da43ca49c5f754ad6e663 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_d7398bdfea6ee3542ebe89c8f6ba4b08bd30366c448da43ca49c5f754ad
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html.twig", "default/admin.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", ":default:admin.html.twig", 1);
         $this->blocks = array(
             'body' => array($this, 'block_body'),
         );
@@ -43,7 +43,7 @@ class __TwigTemplate_d7398bdfea6ee3542ebe89c8f6ba4b08bd30366c448da43ca49c5f754ad
 
     public function getTemplateName()
     {
-        return "default/admin.html.twig";
+        return ":default:admin.html.twig";
     }
 
     public function isTraitable()
@@ -58,6 +58,6 @@ class __TwigTemplate_d7398bdfea6ee3542ebe89c8f6ba4b08bd30366c448da43ca49c5f754ad
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "default/admin.html.twig", "/Volumes/DATA/Site/Symfony/blog-api/front/app/Resources/views/default/admin.html.twig");
+        return new Twig_Source("", ":default:admin.html.twig", "/Volumes/DATA/Site/Symfony/blog-api/front/app/Resources/views/default/admin.html.twig");
     }
 }

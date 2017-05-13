@@ -12,4 +12,4 @@ parameters:
     secret: ThisTokenIsNotSoSecretChangeIt
     github_client_id: 6be4dda4337dfb62e211
     github_client_secret: 1fd088528d37cda4100f8b54e15e9145adb66dce
-    my_api_url: 'http://devbackrestsymfony.fr/app.php/'
+    my_api_url: 'http://devbackrestsymfony.fr/app_dev.php/'

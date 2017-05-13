@@ -1,19 +1,24 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/security.html
 security:
     providers:
-        github_user_provider:
+        provider.github_user:
             id: github_user_provider
-
     firewalls:
-
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+            simple_preauth:
+                authenticator: github_authenticator
+            provider: provider.github_user
         secured_area:
             pattern: ^/admin
             stateless: false
             simple_preauth:
                 authenticator: github_authenticator
-            provider: github_user_provider
+            provider: provider.github_user
             logout:
                 path:   /admin/logout
                 target: /
-
         main:
             anonymous: ~

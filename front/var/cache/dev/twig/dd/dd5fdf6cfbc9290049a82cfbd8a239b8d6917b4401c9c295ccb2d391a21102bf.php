@@ -15,19 +15,19 @@ class __TwigTemplate_091865cad7c4b3501cd58b2ebeec7efc568bab46f8c42735f1a57cb7319
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_cfd9ae5970fa796cd1f9bee28658a3298b9cbd2309f59cd9824408cd95cad0dc = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_cfd9ae5970fa796cd1f9bee28658a3298b9cbd2309f59cd9824408cd95cad0dc->enter($__internal_cfd9ae5970fa796cd1f9bee28658a3298b9cbd2309f59cd9824408cd95cad0dc_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/articles.html.twig"));
+        $__internal_d1063f9bac86ccb2fdfa720a8dc6c789aeef245ba29b00edf6e08067da58f113 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_d1063f9bac86ccb2fdfa720a8dc6c789aeef245ba29b00edf6e08067da58f113->enter($__internal_d1063f9bac86ccb2fdfa720a8dc6c789aeef245ba29b00edf6e08067da58f113_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/articles.html.twig"));
 
-        $__internal_e0e6f85b3072a60bdd41b7e511a873fbd3e6d00525b3811b8153d8c64438718e = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_e0e6f85b3072a60bdd41b7e511a873fbd3e6d00525b3811b8153d8c64438718e->enter($__internal_e0e6f85b3072a60bdd41b7e511a873fbd3e6d00525b3811b8153d8c64438718e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/articles.html.twig"));
+        $__internal_2bf5e20ce6aba7c4ff33bb734efcbe1d9288892949e68723a3cebeba910c6af5 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_2bf5e20ce6aba7c4ff33bb734efcbe1d9288892949e68723a3cebeba910c6af5->enter($__internal_2bf5e20ce6aba7c4ff33bb734efcbe1d9288892949e68723a3cebeba910c6af5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/articles.html.twig"));
 
         // line 1
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\DumpExtension')->dump($this->env, $context, (isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new Twig_Error_Runtime('Variable "articles" does not exist.', 1, $this->getSourceContext()); })()));
         
-        $__internal_cfd9ae5970fa796cd1f9bee28658a3298b9cbd2309f59cd9824408cd95cad0dc->leave($__internal_cfd9ae5970fa796cd1f9bee28658a3298b9cbd2309f59cd9824408cd95cad0dc_prof);
+        $__internal_d1063f9bac86ccb2fdfa720a8dc6c789aeef245ba29b00edf6e08067da58f113->leave($__internal_d1063f9bac86ccb2fdfa720a8dc6c789aeef245ba29b00edf6e08067da58f113_prof);
 
         
-        $__internal_e0e6f85b3072a60bdd41b7e511a873fbd3e6d00525b3811b8153d8c64438718e->leave($__internal_e0e6f85b3072a60bdd41b7e511a873fbd3e6d00525b3811b8153d8c64438718e_prof);
+        $__internal_2bf5e20ce6aba7c4ff33bb734efcbe1d9288892949e68723a3cebeba910c6af5->leave($__internal_2bf5e20ce6aba7c4ff33bb734efcbe1d9288892949e68723a3cebeba910c6af5_prof);
 
     }
 

@@ -82,6 +82,12 @@
   'CsaGuzzleBundle:Calls:list.html.twig' => __DIR__.'/../../../vendor/csa/guzzle-bundle/src/Resources/views/Calls/list.html.twig',
   'CsaGuzzleBundle:Calls:macros.html.twig' => __DIR__.'/../../../vendor/csa/guzzle-bundle/src/Resources/views/Calls/macros.html.twig',
   'CsaGuzzleBundle:Collector:guzzle.html.twig' => __DIR__.'/../../../vendor/csa/guzzle-bundle/src/Resources/views/Collector/guzzle.html.twig',
+  'NelmioApiDocBundle:Components:motd.html.twig' => __DIR__.'/../../../vendor/nelmio/api-doc-bundle/Nelmio/ApiDocBundle/Resources/views/Components/motd.html.twig',
+  'NelmioApiDocBundle:Components:version.html.twig' => __DIR__.'/../../../vendor/nelmio/api-doc-bundle/Nelmio/ApiDocBundle/Resources/views/Components/version.html.twig',
+  'NelmioApiDocBundle::layout.html.twig' => __DIR__.'/../../../vendor/nelmio/api-doc-bundle/Nelmio/ApiDocBundle/Resources/views/layout.html.twig',
+  'NelmioApiDocBundle::method.html.twig' => __DIR__.'/../../../vendor/nelmio/api-doc-bundle/Nelmio/ApiDocBundle/Resources/views/method.html.twig',
+  'NelmioApiDocBundle::resource.html.twig' => __DIR__.'/../../../vendor/nelmio/api-doc-bundle/Nelmio/ApiDocBundle/Resources/views/resource.html.twig',
+  'NelmioApiDocBundle::resources.html.twig' => __DIR__.'/../../../vendor/nelmio/api-doc-bundle/Nelmio/ApiDocBundle/Resources/views/resources.html.twig',
   '::base.html.twig' => __DIR__.'/../../../app/Resources/views/base.html.twig',
   ':default:index.html.twig' => __DIR__.'/../../../app/Resources/views/default/index.html.twig',
 );

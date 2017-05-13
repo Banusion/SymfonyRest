@@ -14,6 +14,7 @@ use Symfony\Component\Validator\ConstraintViolationList;
 use AppBundle\Exception\ResourceValidationException;
 use Hateoas\Representation\CollectionRepresentation;
 use Hateoas\Representation\PaginatedRepresentation;
+use Nelmio\ApiDocBundle\Annotation as Doc;
 
 class ArticleController extends FOSRestController
 {
@@ -40,6 +41,11 @@ class ArticleController extends FOSRestController
      *     description="The pagination offset"
      * )
      * @Rest\View()
+     * @Doc\ApiDoc(
+     *     section="Articles",
+     *     resource=true,
+     *     description="Get the list of all articles."
+     * )
      */
     public function listAction(ParamFetcherInterface $paramFetcher)
     {
@@ -76,6 +82,19 @@ class ArticleController extends FOSRestController
      *     requirements = {"id"="\d+"}
      * )
      * @Rest\View()
+     * @Doc\ApiDoc(
+     *     section="Articles",
+     *     resource=true,
+     *     description="Get one article.",
+     *     requirements={
+     *         {
+     *             "name"="id",
+     *             "dataType"="integer",
+     *             "requirements"="\d+",
+     *             "description"="The article unique identifier."
+     *         }
+     *     }
+     * )
      */
     public function showArticleAction(Article $article)
     {
@@ -86,6 +105,29 @@ class ArticleController extends FOSRestController
      * @Rest\Post("/articles")
      * @Rest\View(StatusCode = 201)
      * @ParamConverter("article", converter="fos_rest.request_body")
+     * @Doc\ApiDoc(
+     *     section="Articles",
+     *     resource=true,
+     *     description="Post an article.",
+     *     requirements={
+     *         {
+     *             "name"="title",
+     *             "dataType"="string",
+     *             "requirements"="\d+",
+     *             "description"="The article title."
+     *         },
+     *         {
+     *             "name"="content",
+     *             "dataType"="string",
+     *             "requirements"="\d+",
+     *             "description"="The article content."
+     *         }
+     *     },
+     *     statusCodes={
+     *         201="Returned when created",
+     *         400="Returned when a violation is raised by validation"
+     *     }
+     * )
      */
     public function createAction(Article $article, ConstraintViolationList $violations)
     {
@@ -112,6 +154,29 @@ class ArticleController extends FOSRestController
      * )
      * @Rest\View(StatusCode = 200)
      * @ParamConverter("article", converter="fos_rest.request_body")
+     * @Doc\ApiDoc(
+     *     section="Articles",
+     *     resource=true,
+     *     description="Put one article.",
+     *     requirements={
+     *         {
+     *             "name"="id",
+     *             "dataType"="integer",
+     *             "requirements"="\d+",
+     *             "description"="The article unique identifier."
+     *         },
+     *         {
+     *             "name"="title",
+     *             "dataType"="string",
+     *             "description"="The article title."
+     *         },
+     *         {
+     *             "name"="content",
+     *             "dataType"="string",
+     *             "description"="The article content."
+     *         }
+     *     }
+     * )
      */
     public function updateAction(Article $article, ConstraintViolationList $violations)
     {

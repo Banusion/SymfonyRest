@@ -1,6 +1,6 @@
 <?php
 
-/* base.html.twig */
+/* ::base.html.twig */
 class __TwigTemplate_377120c531fbdfd759dc8625a6867ffbd442a7e7b3be806e9e571d764d033ba0 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -82,7 +82,7 @@ class __TwigTemplate_377120c531fbdfd759dc8625a6867ffbd442a7e7b3be806e9e571d764d0
 
     public function getTemplateName()
     {
-        return "base.html.twig";
+        return "::base.html.twig";
     }
 
     public function isTraitable()
@@ -97,6 +97,6 @@ class __TwigTemplate_377120c531fbdfd759dc8625a6867ffbd442a7e7b3be806e9e571d764d0
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "base.html.twig", "/Volumes/DATA/Site/Symfony/blog-api/front/app/Resources/views/base.html.twig");
+        return new Twig_Source("", "::base.html.twig", "/Volumes/DATA/Site/Symfony/blog-api/front/app/Resources/views/base.html.twig");
     }
 }
