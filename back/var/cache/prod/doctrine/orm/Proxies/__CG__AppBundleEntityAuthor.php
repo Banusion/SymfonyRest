@@ -64,10 +64,10 @@ class Author extends \AppBundle\Entity\Author implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'fullname', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'biography', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'articles'];
+            return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'fullname', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'biography'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'fullname', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'biography', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'articles'];
+        return ['__isInitialized__', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'id', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'fullname', '' . "\0" . 'AppBundle\\Entity\\Author' . "\0" . 'biography'];
     }
 
     /**

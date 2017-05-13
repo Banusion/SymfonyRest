@@ -29,11 +29,6 @@ class Author
      */
     private $biography;
 
-    /**
-     * @ORM\OneToMany(targetEntity="Article", mappedBy="author", cascade={"persist"})
-     */
-    private $articles;
-
     public function __construct()
     {
         $this->articles = new ArrayCollection();

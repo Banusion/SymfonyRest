@@ -79,6 +79,9 @@
   'SwiftmailerBundle:Collector:swiftmailer.html.twig' => __DIR__.'/../../../vendor/symfony/swiftmailer-bundle/Resources/views/Collector/swiftmailer.html.twig',
   'DoctrineBundle:Collector:db.html.twig' => __DIR__.'/../../../vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig',
   'DoctrineBundle:Collector:explain.html.twig' => __DIR__.'/../../../vendor/doctrine/doctrine-bundle/Resources/views/Collector/explain.html.twig',
+  'CsaGuzzleBundle:Calls:list.html.twig' => __DIR__.'/../../../vendor/csa/guzzle-bundle/src/Resources/views/Calls/list.html.twig',
+  'CsaGuzzleBundle:Calls:macros.html.twig' => __DIR__.'/../../../vendor/csa/guzzle-bundle/src/Resources/views/Calls/macros.html.twig',
+  'CsaGuzzleBundle:Collector:guzzle.html.twig' => __DIR__.'/../../../vendor/csa/guzzle-bundle/src/Resources/views/Collector/guzzle.html.twig',
   '::base.html.twig' => __DIR__.'/../../../app/Resources/views/base.html.twig',
   ':default:index.html.twig' => __DIR__.'/../../../app/Resources/views/default/index.html.twig',
 );

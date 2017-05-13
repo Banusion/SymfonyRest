@@ -46,6 +46,10 @@ use Hateoas\Configuration\Annotation as Hateoas;
  *     "weather",
  *     embedded = @Hateoas\Embedded("expr(service('app.weather').getCurrent())")
  * )
+* @Hateoas\Relation(
+ *     "authenticated_user",
+ *     embedded = @Hateoas\Embedded("expr(service('security.token_storage').getToken().getUser())")
+ * )
  */
 class Article
 {

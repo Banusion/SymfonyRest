@@ -62,6 +62,17 @@ class appProdProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBundle\R
                 }
                 not_app_article_create:
 
+                // app_article_update
+                if (preg_match('#^/articles/(?P<id>\\d+)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'PUT') {
+                        $allow[] = 'PUT';
+                        goto not_app_article_update;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'app_article_update')), array (  '_controller' => 'AppBundle\\Controller\\ArticleController::updateAction',));
+                }
+                not_app_article_update:
+
             }
 
             if (0 === strpos($pathinfo, '/authors')) {
